@@ -1,0 +1,33 @@
+These scripts are written to run on the orchid-submt cluster
+the original location is: /iliad/hottower/MIGUEL/netcdf/4Stephanie/Scripts/
+The data is located at: /iliad/hottower/MIGUEL/netcdf/4Stephanie/Raw/ERA5/
+
+Scripts:
+eof_routine.m - performs the EOF decomposition for the vertical motion
+ERA_DJF_Heating_EOF.m - Calculates the heating profiles for the DJF months with |RMM|^2 >=1 using the first two EOFs of vertical motion.
+ERA5_DJF_Heating.m -  Calculates the heating profiles for the DJF months with |RMM|^2>=1 using the full vertical velocity
+ERA5_EOF.m - Calculates the EOFs for all the vertical motion data over the oceans
+ERA5_tot_heating.m - calculates the Q1' profiles from  the full velocity and saves it
+ERA5_Heating_final.m - Calculates the <Omega_1' ds/dp> and <Omega_2' ds/dp> for every location, with the vertical gradient in dry static energy being the mean over our climatology.
+ERA5_PC.m - Calculates the PCs over the entire tropics by regressing the vertical motion onto the previously calculated EOFs.  This gives the PCs for each location and each time
+ERA5_DJF_PCs_plot.m - Plots the PCs of vertical motion along with the top-heaviness angle
+
+Figures:
+
+DJF_RMM_angle.jpg - Plot of the top-heaviness angle by RMM phase for active MJO
+DJF_RMM_heating.jpg - Plot of the Q1'=w'ds/dp seperated by RMM phase for active MJO
+DJF_RMM_heating_o1.jpg - Same as previous except the vertical velocity is replaced with the first EOF and PC of vertical motion Q1'=o1 Omega1 ds/dp
+DJF_RMM_heating_o1_o2.jpg - Same as the previous, except with the second EOF added to the first EOF and PC
+DJF_RMM_heating_o2.jpg - Same as the previous, except with vertical velocity replaced by the second EOF and PC of vertical motion
+DJF_RMM_o1.jpg - Plot of the first PC of vertical motion for active MJO seperated by RMM phase
+DJF_RMM_o2.jpg - Plot of the second PC of vertical motion for active MJO seperated by RMM phase
+
+Data files:
+ERA5_Q1_prime_O1_O2_DJF_MJO.nc - netcdf file with the heating profiles for each EOF as well as the combination.  The dimensions of the data are (phase,pressure,lat,lon).
+ERA5_Q1_prime_norm_DJF_MJO.nc - netcdf file with the heating profile using the whole vertical velocity profile. Has the same dimensions as the one above
+coast.mat : data that has coasts for plotting
+ERA5_angle_decom_RMM_DJF.mat - mat file with the top-heaviness angle for each RMM index
+ERA5_dsdp_tropics_mean.mat - mat file with the time-average vertical gradient of dry static energy
+ERA5_PCs.mat - mat file with the save PCs
+ERA5_Q1.mat - mat file with the save heating anomalies due to each EOF.  When these are multiplied by the PCs they create the apparent heating profiles
+rmm.mat - mat file with the timeline of the RMM index
