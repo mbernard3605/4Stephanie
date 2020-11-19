@@ -13,14 +13,21 @@ ERA5_PC.m - Calculates the PCs over the entire tropics by regressing the vertica
 ERA5_DJF_PCs_plot.m - Plots the PCs of vertical motion along with the top-heaviness angle
 
 Figures:
-
+Figure_list.pdf - better description of the plots and how they were obtained.
 DJF_RMM_angle.jpg - Plot of the top-heaviness angle by RMM phase for active MJO
+DJF_RMM_angle_up_cutoff.jpg - Plot of the top-heaviness angle by RMM phase for active MJO with only angles between [-120 120] to show highlight upward regions
 DJF_RMM_heating.jpg - Plot of the Q1'=w'ds/dp seperated by RMM phase for active MJO
 DJF_RMM_heating_o1.jpg - Same as previous except the vertical velocity is replaced with the first EOF and PC of vertical motion Q1'=o1 Omega1 ds/dp
 DJF_RMM_heating_o1_o2.jpg - Same as the previous, except with the second EOF added to the first EOF and PC
 DJF_RMM_heating_o2.jpg - Same as the previous, except with vertical velocity replaced by the second EOF and PC of vertical motion
+DJF_RMM_heating_o1_con_lapse.jpg - repeat of the above plot for mode 1, except the tropical mean DSE advection is used
+DJF_RMM_heating_o1_o2_con_lapse.jpg - repeat of the above plot for mode 1+2, except the tropical mean DSE advection is used
+DJF_RMM_heating_o2_con_lapse.jpg - repeat of the above plot for mode 2, except the tropical mean DSE advection is used
 DJF_RMM_o1.jpg - Plot of the first PC of vertical motion for active MJO seperated by RMM phase
 DJF_RMM_o2.jpg - Plot of the second PC of vertical motion for active MJO seperated by RMM phase
+EOF_Heating_all_profiles.jpg - Heating profiles for the first four EOFs of vertical motion.  S_n=Omega_n ds/dp
+EOF_Heating_profiles.jpg - Heating profiles for the first two EOFs of vertical motion
+ERA5_DJF_rmm_tot_heating.jpg - Total heating rate using the full vertical motion variability.
 
 Data files:
 ERA5_Q1_prime_O1_O2_DJF_MJO.nc - netcdf file with the heating profiles for each EOF as well as the combination.  The dimensions of the data are (phase,pressure,lat,lon).
